@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>gender swap kingdom</title>
+    <title>genderswap kingdom</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -12,8 +12,25 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 20px;
         }
-        header { text-align: center; padding: 30px 0; }
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+        }
         h1 { font-size: 2.7rem; color: #ffcc00; letter-spacing: 2px; }
+        .upload-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: #ffcc00;
+            color: #2c2c2c;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .upload-btn:hover { opacity: 0.9; }
         .container { max-width: 1200px; margin: 0 auto; }
         .comic-list {
             display: grid;
@@ -30,8 +47,7 @@
         }
         .comic-card:hover { transform: translateY(-10px); }
         .comic-cover { width: 100%; height: 300px; object-fit: cover; }
-        .comic-info { padding: 15px; }
-        .comic-title { font-size: 1.2rem; color: #ffcc00; margin-bottom: 8px; }
+        .comic-info { padding: 15px; }        .comic-title { font-size: 1.2rem; color: #ffcc00; margin-bottom: 8px; }
         .comic-desc { font-size: 0.9rem; color: #aaa; }
         footer { text-align: center; padding: 30px 0; color: #aaa; font-size: 0.9rem; }
         .no-style-link { text-decoration: none; color: inherit; }
@@ -40,6 +56,7 @@
 </head>
 <body>
     <header>
+        <a href="upload.html" class="upload-btn">Upload Truyện</a>
         <h1>vương quốc gender bender</h1>
         <p>Nơi lưu trữ những bộ truyện tranh genben yêu thích</p>
     </header>
@@ -50,7 +67,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 vương quốc truyện Tranh gender bender| Designed with ❤️ by Coconut</p>
+        <p>&copy; 2026 Truyện Tranh Gender Bender| Designed with ❤️ by Coconut</p>
     </footer>
 
     <script>
@@ -79,8 +96,7 @@
                 comicCard.href = `comic-detail.html?id=${comic.id}`;
                 comicCard.className = "no-style-link";
 
-                comicCard.innerHTML = `
-                    <div class="comic-card">
+                comicCard.innerHTML = `                    <div class="comic-card">
                         <img src="${comic.cover || 'https://placehold.co/300x400/444/ccc?text=No+Image'}" 
                              alt="${comic.title}" class="comic-cover">
                         <div class="comic-info">
